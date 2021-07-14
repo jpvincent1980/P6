@@ -1,4 +1,4 @@
-let url = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Drama"
+let url = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 const bestMovieTitle = document.getElementById("movie-title");
 const bestMovieGenre = document.getElementById("movie-genre");
 const bestMovieReleaseDate = document.getElementById("movie-release-date");
