@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Acherus';
+    src: url('fonts/acherusgrotesque-regular-webfont.woff'),
+         url('fonts/acherusgrotesque-regular-webfont.woff2');
+}
+
+*
+{
+font-family: 'Acherus';
+background-color: #000;
+color: #fff;
+}
+
+ul {
+list-style-type: none;
+}

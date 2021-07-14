@@ -1,0 +1,20 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)\r ![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpvincent1980/P6.git"
+  },
+  "author": "Jean-Philippe Vincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpvincent1980/P6/issues"
+  },
+  "homepage": "https://github.com/jpvincent1980/P6#readme"
+}
