@@ -26,6 +26,7 @@ ul {
 
 .modal-content {
   display: flex;
+  flex-direction: row;
   width: 50%;
   height: 50%;
   margin: auto;
@@ -55,8 +56,14 @@ ul {
   width: 80%;
   margin: auto;
 }
+.caroussel li {
+  position: relative;
+  display: inline-block;
+  transform-origin: center middle;
+  transition: transform 500ms;
+}
 .caroussel li:not(:hover) {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 .caroussel li:hover {
   transform: scale(1.1);

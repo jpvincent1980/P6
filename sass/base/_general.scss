@@ -27,8 +27,7 @@ z-index: 1;
 
 .modal-content {
 display: flex;
-// align-items: flex-start;
-// flex-direction: row-reverse;
+flex-direction: row;
 width: 50%;
 height: 50%;
 margin: auto;
@@ -39,17 +38,17 @@ opacity: 0;
 transform: translateY(0px);
 transition: all 500ms;
 cursor: pointer;
-    li {
+    & li {
     text-align: left;
     }
-    button {
+    & button {
     float: right;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     color: #fff;
     }
-    img {
+    & img {
     float: right;
     }
 }
@@ -57,10 +56,17 @@ cursor: pointer;
 .caroussel {
 width: 80%;
 margin: auto;
-    ul:hover {
+    & li {
+    position: relative;
+    display: inline-block;
+    transform-origin: center middle;
+    transition: transform 500ms;
+    }
+    & li:not(:hover) {
     opacity: 0.3;
     }
-    li:hover {
+    & li:hover {
+    transform: scale(1.1);
     opacity: 1;
     }
 }
@@ -72,9 +78,9 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 font-size: 1.5rem;
-    nav {
+    & nav {
     margin-left: auto;
     }
-    li {
+    & li {
     padding: 0 10px;}
 }
