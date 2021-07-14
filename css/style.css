@@ -1,15 +1,46 @@
-@font-face {
-  font-family: "Acherus";
-  src: url("fonts/acherusgrotesque-regular-webfont.woff"), url("fonts/acherusgrotesque-regular-webfont.woff2");
-}
 * {
-  font-family: "Acherus";
-  background-color: #000;
-  color: #fff;
+  font-family: Arial, sans-serif;
+  background-color: #E6E6E6;
+  color: #000;
+  text-align: center;
 }
 
 ul {
   list-style-type: none;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.modal-content {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  padding: 15px 30px;
+  border-radius: 20px;
+  background-color: red;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: all 500ms;
+  cursor: pointer;
+}
+.modal-content li {
+  text-align: left;
+}
+.modal-content button {
+  float: right;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: #fff;
+}
+.modal-content img {
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */

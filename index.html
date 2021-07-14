@@ -3,69 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>JustStreamIt</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css"
+          charset="utf-8">
     <script src="js/API.js" defer></script>
+    <script src="js/modal.js" defer></script>
 </head>
 <body>
+<!-- The modal -->
+<div class="modal" id="modal" aria-hidden="true" role="dialog"
+     aria-describedby="informations relatives au film">
+    <div class="modal-content" id="modal-content">
+        <button id="close-modal" autofocus="true">X</button>
+        <header id="modal-header">
+            <h1 id="movie-title">TITRE DU FILM</h1>
+        </header>
+        <section class="modal-section">
+            <p>
+                <ul>
+                    <li id="movie-genre">GENRE:</li>
+                    <li id="movie-release-date">DATE DE SORTIE:</li>
+                    <li id="movie-votes">CLASSIFICATION:</li>
+                    <li id="movie-rating">SCORE IMDB:</li>
+                    <li id="movie-directors">REALISE PAR:</li>
+                    <li id="movie-actors">AVEC:</li>
+                    <li id="movie-duration">DUREE:</li>
+                    <li id="movie-countries">PAYS:</li>
+                    <li id="movie-box-office">BOX-OFFICE:</li>
+                    <li id="movie-synopsis">RESUME:</li>
+                </ul>
+            </p>
+        </section>
+        <aside id="movie-image"></aside>
+        <footer class="modal-footer"></footer>
+    </div>
+</div>
 <header>
     <h1>JustStreamIt</h1>
     <nav>
         <ul>
-            <li>Accueil</li>
+            <li>ACCUEIL</li>
             <li>Catégories</li>
         </ul>
     </nav>
 </header>
 <main>
-<section>
+<section class="best_movie">
     <h2>Meilleur film</h2>
+    <h3></h3>
+    <button id="open-modal">Détails</button>
+    <img />
 </section>
 <section>
-    <h2>Films les mieux notés</h2>
     <ul>
-        <li>Film 1</li>
-        <li>Film 2</li>
-        <li>Film 3</li>
-        <li>Film 4</li>
-        <li>Film 5</li>
-        <li>Film 6</li>
-        <li>Film 7</li>
+        <h2>Films les mieux notés</h2>
+            <li>Film 1</li>
+            <li>Film 2</li>
+            <li>Film 3</li>
+            <li>Film 4</li>
+            <li>Film 5</li>
+            <li>Film 6</li>
+            <li>Film 7</li>
     </ul>
 </section>
 <section>
-    <h2>Catégorie 1</h2>
     <ul>
-        <li>Film 1</li>
-        <li>Film 2</li>
-        <li>Film 3</li>
-        <li>Film 4</li>
-        <li>Film 5</li>
-        <li>Film 6</li>
-        <li>Film 7</li>
+        <h2>Catégorie 1</h2>
+            <li>Film 1</li>
+            <li>Film 2</li>
+            <li>Film 3</li>
+            <li>Film 4</li>
+            <li>Film 5</li>
+            <li>Film 6</li>
+            <li>Film 7</li>
     </ul>
 </section>
 <section>
-    <h2>Catégorie 2</h2>
     <ul>
-        <li>Film 1</li>
-        <li>Film 2</li>
-        <li>Film 3</li>
-        <li>Film 4</li>
-        <li>Film 5</li>
-        <li>Film 6</li>
-        <li>Film 7</li>
+        <h2>Catégorie 2</h2>
+            <li>Film 1</li>
+            <li>Film 2</li>
+            <li>Film 3</li>
+            <li>Film 4</li>
+            <li>Film 5</li>
+            <li>Film 6</li>
+            <li>Film 7</li>
     </ul>
 </section>
 <section>
-    <h2>Catégorie 3</h2>
     <ul>
-        <li>Film 1</li>
-        <li>Film 2</li>
-        <li>Film 3</li>
-        <li>Film 4</li>
-        <li>Film 5</li>
-        <li>Film 6</li>
-        <li>Film 7</li>
+        <h2>Catégorie 3</h2>
+            <li>Film 1</li>
+            <li>Film 2</li>
+            <li>Film 3</li>
+            <li>Film 4</li>
+            <li>Film 5</li>
+            <li>Film 6</li>
+            <li>Film 7</li>
     </ul>
 </section>
 </main>
