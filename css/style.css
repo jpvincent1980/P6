@@ -5,8 +5,15 @@
   text-align: center;
 }
 
+section, header {
+  border: 2px solid black;
+}
+
 ul {
   list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .modal {
@@ -18,6 +25,7 @@ ul {
 }
 
 .modal-content {
+  display: flex;
   width: 50%;
   height: 50%;
   margin: auto;
@@ -41,6 +49,33 @@ ul {
 }
 .modal-content img {
   float: right;
+}
+
+.caroussel {
+  width: 80%;
+  margin: auto;
+}
+.caroussel li:not(:hover) {
+  opacity: 0.5;
+}
+.caroussel li:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.header {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.header nav {
+  margin-left: auto;
+}
+.header li {
+  padding: 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

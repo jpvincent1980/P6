@@ -6,8 +6,15 @@ color: #000;
 text-align: center;
 }
 
+section, header {
+border: 2px solid black;
+}
+
 ul {
 list-style-type: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .modal {
@@ -19,6 +26,9 @@ z-index: 1;
 }
 
 .modal-content {
+display: flex;
+// align-items: flex-start;
+// flex-direction: row-reverse;
 width: 50%;
 height: 50%;
 margin: auto;
@@ -44,3 +54,27 @@ cursor: pointer;
     }
 }
 
+.caroussel {
+width: 80%;
+margin: auto;
+    ul:hover {
+    opacity: 0.3;
+    }
+    li:hover {
+    opacity: 1;
+    }
+}
+
+.header {
+width: 80%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 1.5rem;
+    nav {
+    margin-left: auto;
+    }
+    li {
+    padding: 0 10px;}
+}
