@@ -56,6 +56,12 @@ ul {
   width: 80%;
   margin: auto;
 }
+.caroussel ul {
+  transition: transform 1s;
+}
+.caroussel ul:hover {
+  transform: translateX(-10px);
+}
 .caroussel li {
   position: relative;
   display: inline-block;
@@ -66,8 +72,12 @@ ul {
   opacity: 0.3;
 }
 .caroussel li:hover {
-  transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.2);
   opacity: 1;
+}
+.caroussel li:hover ~ li {
+  transform: translateX(10px);
 }
 
 .header {

@@ -56,6 +56,12 @@ cursor: pointer;
 .caroussel {
 width: 80%;
 margin: auto;
+    & ul {
+    transition: transform 1s;
+    }
+    & ul:hover {
+    transform: translateX($moveLeft);
+    }
     & li {
     position: relative;
     display: inline-block;
@@ -66,8 +72,12 @@ margin: auto;
     opacity: 0.3;
     }
     & li:hover {
-    transform: scale(1.1);
+    cursor: pointer;
+    transform: scale(1.2);
     opacity: 1;
+    }
+    & li:hover ~ li {
+    transform: translateX($moveRight);
     }
 }
 
