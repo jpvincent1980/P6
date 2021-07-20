@@ -92,7 +92,7 @@ modal.addEventListener("click", function(event) {
     movieGenre.textContent = "GENRE: " + data.genres;
     movieReleaseDate.textContent = "DATE DE SORTIE: " + data.date_published;
     movieRated.textContent = "CLASSE: " + data.rated;
-    movieImdbScore.textContent = "SCORE IMDB: " + data.imdb_score;
+    movieImdbScore.textContent = "SCORE IMDB: " + data.imdb_score + "/10";
     movieDirectors.textContent = "REALISE PAR: " + data.directors;
     movieActors.textContent = "AVEC: " + data.actors;
     movieDuration.textContent = "DUREE: " + data.duration + " min.";

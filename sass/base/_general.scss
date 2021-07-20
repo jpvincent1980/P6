@@ -28,13 +28,65 @@ a:link {
 text-decoration: none;
 }
 
+.main-menu-link {
+position: relative;
+display: block;
+text-decoration: none;
+transition: 0.5s;
+}
+
+.main-menu-link::after {
+position: absolute;
+content: "";
+width: 100%;
+height: 5px;
+top: 100%;
+left: 0;
+background: #000;
+transition: transform 0.5s;
+transform: scaleX(0);
+transform-origin: right;
+}
+
+.main-menu-link:hover::after {
+transform: scaleX(1);
+transform-origin: left;
+}
+
+.main-menu-link:hover {
+transform: scaleY(30px);
+}
+
+.main-menu-link:hover + ul > li {
+visibility: visible;
+}
+
+.sous-menu {
+display: flex;
+flex-direction: column;
+padding: 0;
+margin-top: 10px;
+}
+
+// .sous-menu ul {
+// position: relative;
+// }
+
+.sous-menu li {
+visibility: hidden;
+text-align: center;
+}
+
 #modal {
 position: fixed;
+top: 0;
+left: 0;
 width: 100%;
 height: 100%;
 background-color: rgba(0, 0, 0, 0.8);
 visibility: hidden;
 z-index: 1;
+cursor: pointer;
 }
 
 #modal-header {
@@ -44,7 +96,6 @@ padding-right: $image-width;
 #movie-title {
 margin-top: 0;
 }
-
 
 .modal-content {
 margin-top: 50vh;
@@ -59,7 +110,7 @@ background-color: rgba(255,255,255,1);
 opacity: 0;
 transform: translateY(40%);
 transition: all 500ms;
-cursor: pointer;
+cursor: default;
     & ul {
     padding: 0;
     padding-right: $image-width;
@@ -75,6 +126,7 @@ cursor: pointer;
     background-color: rgba(0,0,0,1);
     font-size: 1.5rem;
     color: #fff;
+    cursor: pointer;
     }
     & img {
     position: absolute;
