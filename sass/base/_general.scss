@@ -26,6 +26,7 @@ z-index: 1;
 }
 
 .modal-content {
+margin-top: 50vh;
 display: flex;
 flex-direction: row;
 width: 50%;
@@ -35,14 +36,14 @@ padding: 15px 30px;
 border-radius: 20px;
 background-color: red;
 opacity: 0;
-transform: translateY(0px);
+transform: translateY(40%);
 transition: all 500ms;
 cursor: pointer;
-    & li {
-    text-align: left;
+    & ul {
+    padding: 3px;
+    flex-direction: column;
     }
     & button {
-    float: right;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -65,15 +66,19 @@ margin: auto;
     & li {
     position: relative;
     display: inline-block;
-    transform-origin: center middle;
-    transition: transform 500ms;
+    box-sizing: border-box;
+    transform-origin: center left;
+    transition: all 500ms;
+    }
+    & li > img {
+    object-fit: cover;
     }
     & li:not(:hover) {
     opacity: 0.3;
     }
     & li:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
     }
     & li:hover ~ li {

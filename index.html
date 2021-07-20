@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>JustStreamIt</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css"
-          charset="utf-8">
-    <script src="js/API.js" defer></script>
-    <script src="js/modal.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8">
+    <script src="js/script.js" defer></script>
+
 </head>
-<body>
+<body id="body">
 <!-- The modal -->
 <div class="modal" id="modal" aria-hidden="true" role="dialog"
      aria-describedby="informations relatives au film">
@@ -18,12 +17,11 @@
             <h1 id="movie-title">TITRE DU FILM</h1>
         </header>
         <section class="modal-section">
-            <p>
                 <ul>
                     <li id="movie-genre">GENRE:</li>
                     <li id="movie-release-date">DATE DE SORTIE:</li>
-                    <li id="movie-votes">CLASSIFICATION:</li>
-                    <li id="movie-rating">SCORE IMDB:</li>
+                    <li id="movie-rated">CLASSIFICATION:</li>
+                    <li id="movie-imdb-score">SCORE IMDB:</li>
                     <li id="movie-directors">REALISE PAR:</li>
                     <li id="movie-actors">AVEC:</li>
                     <li id="movie-duration">DUREE:</li>
@@ -31,7 +29,6 @@
                     <li id="movie-box-office">BOX-OFFICE:</li>
                     <li id="movie-synopsis">RESUME:</li>
                 </ul>
-            </p>
         </section>
         <aside id="movie-image"></aside>
         <footer class="modal-footer"></footer>
@@ -42,64 +39,66 @@
     <nav class="header">
         <h1>JustStreamIt</h1>
         <ul>
-            <li>Accueil</li>
-            <li>Catégories</li>
+            <li><a href="#body">Accueil</a></li>
+            <li><a href="#Sci-Fi">Catégories</a></li>
         </ul>
     </nav>
 </header>
 <main>
-<section class="best_movie">
+<section id="best-movie">
     <h2>Meilleur film</h2>
+    <img class="open-modal" src="" href="" />
     <h3></h3>
-    <button id="open-modal">Détails</button>
-    <img />
+    <button class="open-modal" href="">Détails</button>
+    <h4></h4>
+
 </section>
-<section class="caroussel">
+<section class="caroussel" id="bestScores">
     <h2>Films les mieux notés</h2>
     <ul>
-        <li><img src="image.jpg" /></li>
-        <li><img src="image.jpg" /></li>
-        <li><img src="image.jpg" /></li>
-        <li><img src="image.jpg" /></li>
-        <li><img src="image.jpg" /></li>
-        <li><img src="image.jpg" /></li>
-        <li><img src="image.jpg" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
     </ul>
 </section>
-<section class="caroussel">
+<section class="caroussel" id="Sci-Fi">
     <h2>Science-Fiction</h2>
     <ul>
-        <li><img src="image2.jpg" /></li>
-        <li><img src="image2.jpg" /></li>
-        <li><img src="image2.jpg" /></li>
-        <li><img src="image2.jpg" /></li>
-        <li><img src="image2.jpg" /></li>
-        <li><img src="image2.jpg" /></li>
-        <li><img src="image2.jpg" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
     </ul>
 </section>
-<section class="caroussel">
+<section class="caroussel" id="Animation">
     <h2>Animation</h2>
     <ul>
-        <li><img src="image3.jpg" /></li>
-        <li><img src="image3.jpg" /></li>
-        <li><img src="image3.jpg" /></li>
-        <li><img src="image3.jpg" /></li>
-        <li><img src="image3.jpg" /></li>
-        <li><img src="image3.jpg" /></li>
-        <li><img src="image3.jpg" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
     </ul>
 </section>
-<section class="caroussel">
+<section class="caroussel" id="Horror">
     <h2>Horreur</h2>
     <ul>
-        <li><img src="image4.jpg" /></li>
-        <li><img src="image4.jpg" /></li>
-        <li><img src="image4.jpg" /></li>
-        <li><img src="image4.jpg" /></li>
-        <li><img src="image4.jpg" /></li>
-        <li><img src="image4.jpg" /></li>
-        <li><img src="image4.jpg" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
+        <li><img class="open-modal" src="" href="" /></li>
     </ul>
 </section>
 </main>
