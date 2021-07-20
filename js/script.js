@@ -91,17 +91,19 @@ modal.addEventListener("click", function(event) {
     movieTitle.textContent = data.title;
     movieGenre.textContent = "GENRE: " + data.genres;
     movieReleaseDate.textContent = "DATE DE SORTIE: " + data.date_published;
-    movieRated.textContent = "CLASSE:" + data.rated;
+    movieRated.textContent = "CLASSE: " + data.rated;
     movieImdbScore.textContent = "SCORE IMDB: " + data.imdb_score;
     movieDirectors.textContent = "REALISE PAR: " + data.directors;
     movieActors.textContent = "AVEC: " + data.actors;
-    movieDuration.textContent = "DUREE: " + data.duration;
+    movieDuration.textContent = "DUREE: " + data.duration + " min.";
     movieCountries.textContent = "PAYS D'ORIGINE: " + data.countries;
-    movieBoxOffice.textContent = "BOX-OFFICE: " + data.worldwide_gross_income;
+    let boxOffice = new Intl.NumberFormat().format(data.worldwide_gross_income);
+    movieBoxOffice.textContent = "BOX-OFFICE: " + boxOffice + " $";
     movieSynopsis.textContent = "RESUME: " + data.description;
     movieImage.innerHTML = "<img src='" + data.image_url +"' />";
     })
     .catch((err) => console.log("Erreur : " + err));
+    document.getElementById("modal").style.visibility = "visible";
     document.getElementById("modal-content").style.visibility = "visible";
     document.getElementById("modal-content").style.opacity = 1;
     document.getElementById("modal-content").style.transform = "translateY(50%)";
@@ -110,6 +112,7 @@ modal.addEventListener("click", function(event) {
 
 closeModal.addEventListener("click", function(event) {
     event.preventDefault();
+    document.getElementById("modal").style.visibility = "hidden";
     document.getElementById("modal-content").style.visibility = "hidden";
     document.getElementById("modal-content").style.opacity = 0;
     document.getElementById("modal-content").style.transform = "translateY(40%)";
@@ -117,6 +120,7 @@ closeModal.addEventListener("click", function(event) {
 
 document.addEventListener("click", function(event) {
     if (event.target == document.getElementById("modal")) {
+    document.getElementById("modal").style.visibility = "hidden";
     document.getElementById("modal-content").style.visibility = "hidden";
     document.getElementById("modal-content").style.opacity = 0;
     document.getElementById("modal-content").style.transform = "translateY(40%)";
@@ -125,6 +129,7 @@ document.addEventListener("click", function(event) {
 
 document.addEventListener("keyup", function(event) {
     if (event.key == "Escape") {
+    document.getElementById("modal").style.visibility = "hidden";
     document.getElementById("modal-content").style.visibility = "hidden";
     document.getElementById("modal-content").style.opacity = 0;
     document.getElementById("modal-content").style.transform = "translateY(40%)";

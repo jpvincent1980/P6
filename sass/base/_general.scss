@@ -1,56 +1,86 @@
 *
 {
-font-family: Arial, sans-serif;
-background-color: $color-background;
+font-family: 'Noto Sans JP', sans-serif;
+background-color: #fff;
 color: #000;
 text-align: center;
 }
 
 section, header {
-border: 2px solid black;
+border: 0px solid black;
+}
+
+h1 {
+font-size: 3.5rem;
 }
 
 ul {
 list-style-type: none;
 display: flex;
 justify-content: space-between;
-align-items: center;
 }
 
-.modal {
-position: absolute;
+li {
+text-align: left;
+}
+
+a:link {
+text-decoration: none;
+}
+
+#modal {
+position: fixed;
 width: 100%;
 height: 100%;
+background-color: rgba(0, 0, 0, 0.8);
 visibility: hidden;
 z-index: 1;
 }
 
+#modal-header {
+padding-right: $image-width;
+}
+
+#movie-title {
+margin-top: 0;
+}
+
+
 .modal-content {
 margin-top: 50vh;
 display: flex;
-flex-direction: row;
+flex-direction: column;
+flex-wrap: nowrap;
 width: 50%;
-height: 50%;
 margin: auto;
-padding: 15px 30px;
+padding: $modal-vertical-padding 30px;
 border-radius: 20px;
-background-color: red;
+background-color: rgba(255,255,255,1);
 opacity: 0;
 transform: translateY(40%);
 transition: all 500ms;
 cursor: pointer;
     & ul {
-    padding: 3px;
+    padding: 0;
+    padding-right: $image-width;
     flex-direction: column;
     }
     & button {
-    width: 25px;
-    height: 25px;
+    position: absolute;
+    right: $modal-vertical-padding;
+    width: $closing-button-size;
+    height: $closing-button-size;
     border-radius: 50%;
+    border-width: 0;
+    background-color: rgba(0,0,0,1);
+    font-size: 1.5rem;
     color: #fff;
     }
     & img {
-    float: right;
+    position: absolute;
+    right: $modal-vertical-padding;
+    top: $closing-button-size*2;
+    filter: drop-shadow(0 0 1rem black);
     }
 }
 
@@ -98,4 +128,8 @@ font-size: 1.5rem;
     }
     & li {
     padding: 0 10px;}
+}
+
+#best-movie > img:hover {
+cursor: pointer;
 }
