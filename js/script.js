@@ -1,5 +1,5 @@
 const bestMovie = document.getElementById("best-movie");
-const caroussels = document.getElementsByClassName("caroussel");
+const carousels = document.getElementsByClassName("carousel");
 const modals = document.getElementsByClassName("open-modal");
 const closeModal= document.getElementById("close-modal");
 
@@ -50,7 +50,7 @@ element.setAttribute("href",resolve.url);
 };
 let image = bestMovie.getElementsByTagName("img")[0];
 image.setAttribute("src",resolve.image_url);
-let title = bestMovie.getElementsByTagName("h3")[0];
+let title = bestMovie.getElementsByTagName("h1")[0];
 title.innerText = resolve.title;
 let description = bestMovie.getElementsByTagName("h4")[0];
 description.innerText = resolve.description;
@@ -59,15 +59,15 @@ description.innerText = resolve.description;
 })
 .catch((err) => console.log("Erreur : " + err));
 
-for (let caroussel of caroussels) {
-let genre = caroussel.id;
+for (let carousel of carousels) {
+let genre = carousel.id;
 if (genre == "bestScores") {
 genre = "";
 };
 getSevenMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=",genre)
 .then(function(resolve) {
 let movies = resolve;
-let images = caroussel.getElementsByClassName("open-modal");
+let images = carousel.getElementsByClassName("open-modal");
 let i = 0;
 for (let image of images) {
 image.setAttribute("src",movies[i].image_url);
