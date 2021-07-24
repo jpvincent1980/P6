@@ -135,3 +135,19 @@ document.addEventListener("keyup", function(event) {
     document.getElementById("modal-content").style.transform = "translateY(40%)";
     }
 })
+
+const backToTopButton = document.getElementById("backToTop");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backToTopButton.style.display = "block";
+    backToTopButton.style.opacity = 1;
+  } else {
+    backToTopButton.style.display = "none";
+    backToTopButton.style.opacity = 0.5;
+  }
+}
+function backToTopFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
