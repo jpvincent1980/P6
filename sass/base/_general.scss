@@ -130,7 +130,6 @@ font-size: 1.5rem;
 
 .previous,.next {
 position: absolute;
-display: flex;
 align-items: center;
 background-color: #fff;
 width: 2rem;
@@ -145,12 +144,14 @@ z-index: 1;
 }
 
 .previous {
-left: 0;
+display: none;
+left: 0px;
 transform: translate(50%, -50%);
 }
 
 .next {
-right: 4%;
+display: flex;
+right: 30px;
 transform: translate(50%, -50%);
 }
 
@@ -172,9 +173,6 @@ box-sizing: border-box;
 #best-movie > p {
 position: relative;
 margin: auto;
-// margin: 0 200px;
-// float: right;
-// bottom: 100px;
 }
 
 #best-movie > p:hover {
@@ -226,6 +224,7 @@ cursor: pointer;
 width: $carousel-width;
 margin: auto;
 overflow: hidden;
+scroll-behavior: smooth;
 position: relative;
     & ul {
     transition: transform 1s;
@@ -236,9 +235,8 @@ position: relative;
     transform: translateX($moveLeft);
     }
     & li {
-//     position: relative;
     display: inline-block;
-    padding: 2px;
+    padding: $image-padding;
     box-sizing: border-box;
     transform-origin: center left;
     transition: all 500ms;

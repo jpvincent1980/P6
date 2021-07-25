@@ -130,7 +130,6 @@ a:link {
 
 .previous, .next {
   position: absolute;
-  display: flex;
   align-items: center;
   background-color: #fff;
   width: 2rem;
@@ -145,12 +144,14 @@ a:link {
 }
 
 .previous {
-  left: 0;
+  display: none;
+  left: 0px;
   transform: translate(50%, -50%);
 }
 
 .next {
-  right: 4%;
+  display: flex;
+  right: 30px;
   transform: translate(50%, -50%);
 }
 
@@ -218,9 +219,10 @@ a:link {
 }
 
 .carousel {
-  width: 743px;
+  width: 744px;
   margin: auto;
   overflow: hidden;
+  scroll-behavior: smooth;
   position: relative;
 }
 .carousel ul {

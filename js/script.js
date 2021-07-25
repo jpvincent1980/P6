@@ -1,8 +1,10 @@
+//Defines constants for elements of webpage
 const bestMovie = document.getElementById("best-movie");
 const carousels = document.getElementsByClassName("carousel");
+
+//Defines constants used for modal window
 const modals = document.getElementsByClassName("open-modal");
 const closeModal= document.getElementById("close-modal");
-
 const movieTitle = document.getElementById("movie-title");
 const movieGenre = document.getElementById("movie-genre");
 const movieReleaseDate = document.getElementById("movie-release-date");
@@ -16,6 +18,18 @@ const movieBoxOffice = document.getElementById("movie-box-office");
 const movieSynopsis = document.getElementById("movie-synopsis");
 const movieImage = document.getElementById("movie-image");
 
+//Defines constants and variables used for carousels
+const imageWidth = 182;
+const imagePadding = 2;
+const scrollStep = imageWidth + (2*imagePadding);
+let nextRight = 30;
+let previousLeft = 0;
+const initialNextRight = nextRight+"px";
+const initialPreviousLeft = previousLeft+"px";
+const minNextRight = nextRight - (3*scrollStep)+"px";
+const maxPreviousLeft = previousLeft + (3*scrollStep)+"px";
+
+//Get movie data for the movie with the best score
 async function getBestMovie(url,genre = "") {
 let fullURL = url + genre;
 let fetchRequest = await fetch(fullURL);
@@ -24,6 +38,7 @@ let bestMovie = await response.results.slice(0,1)[0];
 return bestMovie
 }
 
+//Get the list of the seven best movies of a given category
 async function getSevenMovies(url,genre = "") {
 let fullURL = url + genre;
 let fetchRequest = await fetch(fullURL);
@@ -37,6 +52,7 @@ let fullList = await firstFiveMovies.concat(lastTwoMovies);
 return fullList
 }
 
+//Gets data for the best movie
 getBestMovie("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=")
 .then(function(resolve) {
 fetch(resolve.url)
@@ -59,6 +75,7 @@ description.innerText = resolve.description;
 })
 .catch((err) => console.log("Erreur : " + err));
 
+//Gets data for the seven best movies for each category i.e. carousel
 for (let carousel of carousels) {
 let genre = carousel.id;
 if (genre == "bestScores") {
@@ -76,9 +93,50 @@ i += 1;
 };
 })
 .catch((err) => console.log("Erreur : " + err));
+//Handles the scrolling of the carousel with the dynamic arrows
+const previous = carousel.getElementsByClassName("previous")[0];
+const next = carousel.getElementsByClassName("next")[0];
+next.addEventListener("click", function(e) {
+nextRight = Number(next.style.right.replace("px",""));
+nextRight -= scrollStep;
+previousLeft = Number(previous.style.left.replace("px",""));
+previousLeft += scrollStep;
+next.style.right = nextRight+"px";
+previous.style.left = previousLeft+"px";
+carousel.scrollBy(scrollStep,0);
+if (next.style.right == minNextRight) {
+next.style.display = "none";
+} else {
+next.style.display = "flex";
+}
+if (previous.style.left == initialPreviousLeft) {
+previous.style.display = "none";
+} else {
+previous.style.display = "flex";
+}
+})
+previous.addEventListener("click", function(e) {
+nextRight = Number(next.style.right.replace("px",""));
+nextRight += scrollStep;
+previousLeft = Number(previous.style.left.replace("px",""));
+previousLeft -= scrollStep;
+next.style.right = nextRight+"px";
+previous.style.left = previousLeft+"px";
+carousel.scrollBy(-scrollStep,0);
+if (next.style.right == minNextRight) {
+next.style.display = "none";
+} else {
+next.style.display = "flex";
+}
+if (previous.style.left == initialPreviousLeft) {
+previous.style.display = "none";
+} else {
+previous.style.display = "flex";
+}
+})
 };
 
-
+//Handles the opening and closing of the modal window
 for (let modal of modals) {
 modal.addEventListener("click", function(event) {
     event.preventDefault();
@@ -110,6 +168,7 @@ modal.addEventListener("click", function(event) {
 });
 }
 
+//Closes the modal window if user clicks on the X button at the top right
 closeModal.addEventListener("click", function(event) {
     event.preventDefault();
     document.getElementById("modal").style.visibility = "hidden";
@@ -118,6 +177,7 @@ closeModal.addEventListener("click", function(event) {
     document.getElementById("modal-content").style.transform = "translateY(40%)";
 });
 
+//Closes the modal window if user clicks outside of the modal window
 document.addEventListener("click", function(event) {
     if (event.target == document.getElementById("modal")) {
     document.getElementById("modal").style.visibility = "hidden";
@@ -127,6 +187,7 @@ document.addEventListener("click", function(event) {
     }
 });
 
+//Closes the modal window if user presses Escape
 document.addEventListener("keyup", function(event) {
     if (event.key == "Escape") {
     document.getElementById("modal").style.visibility = "hidden";
@@ -136,6 +197,8 @@ document.addEventListener("keyup", function(event) {
     }
 })
 
+//Handles the appearance and disappearance of a Back To Top button at the
+//bottom right of the screen
 const backToTopButton = document.getElementById("backToTop");
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
@@ -151,3 +214,50 @@ function backToTopFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
+
+
+//console.log("offsetWidth -> " + mycarousel.offsetWidth);
+//console.log("clientWidth -> " + mycarousel.clientWidth);
+//console.log("scrollWidth -> " + mycarousel.scrollWidth);
+//console.log("scrollLeft -> " + mycarousel.scrollLeft);
+//console.log("typeof scrollLeft -> " + typeof mycarousel.scrollLeft);
+//console.log("Test scrollLeft -> " + mycarousel.scrollLeft == 0);
+//console.log("Right -> " + next.style.right);
+//
+//next.addEventListener("click", function(e) {
+//nextRight -= scrollStep;
+//previousLeft += scrollStep;
+//next.style.right = nextRight+"px";
+//previous.style.left = previousLeft+"px";
+//mycarousel.scrollBy(scrollStep,0);
+//if (next.style.right == initialNextRight) {
+//previous.style.display = "none";
+//} else {
+//previous.style.display = "flex";
+//}
+//if (previous.style.left == maxPreviousLeft) {
+//next.style.display = "none";
+//} else {
+//next.style.display = "flex";
+//}
+//})
+//
+//previous.addEventListener("click", function(e) {
+//nextRight += scrollStep;
+//previousLeft -= scrollStep;
+//next.style.right = nextRight+"px";
+//previous.style.left = previousLeft+"px";
+//mycarousel.scrollBy(-scrollStep,0);
+//if (next.style.right == initialNextRight) {
+//previous.style.display = "none";
+//} else {
+//previous.style.display = "flex";
+//}
+//if (previous.style.left == maxPreviousLeft) {
+//next.style.display = "none";
+//} else {
+//next.style.display = "flex";
+//}
+//})
