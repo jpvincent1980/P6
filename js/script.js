@@ -62,7 +62,7 @@ return response.json();
 .then(function(resolve) {
 let elements = bestMovie.getElementsByClassName("open-modal");
 for (let element of elements) {
-element.setAttribute("href",resolve.url);
+element.setAttribute("longdesc",resolve.url);
 };
 let image = bestMovie.getElementsByTagName("img")[0];
 image.setAttribute("src",resolve.image_url);
@@ -88,7 +88,8 @@ let images = carousel.getElementsByClassName("open-modal");
 let i = 0;
 for (let image of images) {
 image.setAttribute("src",movies[i].image_url);
-image.setAttribute("href",movies[i].url);
+image.setAttribute("longdesc",movies[i].url);
+image.setAttribute("alt",movies[i].title);
 i += 1;
 };
 })
@@ -140,7 +141,7 @@ previous.style.display = "flex";
 for (let modal of modals) {
 modal.addEventListener("click", function(event) {
     event.preventDefault();
-    let url = this.getAttribute("href");
+    let url = this.getAttribute("longdesc");
     fetch(url)
     .then(function(response) {
     return response.json();
@@ -204,10 +205,8 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     backToTopButton.style.display = "block";
-    backToTopButton.style.opacity = 1;
   } else {
     backToTopButton.style.display = "none";
-    backToTopButton.style.opacity = 0.5;
   }
 }
 function backToTopFunction() {
