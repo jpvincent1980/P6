@@ -65,15 +65,14 @@ for (let element of elements) {
 if (element.getAttribute("value") != null) {
 element.setAttribute("value",resolve.url);
 } else {
-element.setAttribute("longdesc",resolve.url);
+element.setAttribute("href",resolve.url);
+bestMovie.getElementsByTagName("h1")[0].innerText = resolve.title;
+bestMovie.getElementsByTagName("h2")[0].innerText = resolve.description;
+if (element.getElementsByTagName("img").length > 0) {
+element.getElementsByTagName("img")[0].setAttribute("src",resolve.image_url);
 };
+}
 };
-let image = bestMovie.getElementsByTagName("img")[0];
-image.setAttribute("src",resolve.image_url);
-let title = bestMovie.getElementsByTagName("h1")[0];
-title.innerText = resolve.title;
-let description = bestMovie.getElementsByTagName("h4")[0];
-description.innerText = resolve.description;
 })
 .catch((err) => console.log("Erreur : " + err));
 })
@@ -91,13 +90,14 @@ let movies = resolve;
 let images = carousel.getElementsByClassName("open-modal");
 let i = 0;
 for (let image of images) {
-image.setAttribute("src",movies[i].image_url);
-image.setAttribute("longdesc",movies[i].url);
-image.setAttribute("alt",movies[i].title);
+image.setAttribute("href",movies[i].url);
+image.getElementsByTagName("img")[0].setAttribute("src",movies[i].image_url);
+image.getElementsByTagName("img")[0].setAttribute("alt",movies[i].title);
 i += 1;
 };
 })
 .catch((err) => console.log("Erreur : " + err));
+
 //Handles the scrolling of the carousel with the dynamic arrows
 const previous = carousel.getElementsByClassName("previous")[0];
 const next = carousel.getElementsByClassName("next")[0];
@@ -145,7 +145,7 @@ previous.style.display = "flex";
 for (let modal of modals) {
 modal.addEventListener("click", function(event) {
     event.preventDefault();
-    let url = this.getAttribute("longdesc");
+    let url = this.getAttribute("href");
     if (url == null) {
     url = this.getAttribute("value");
     }

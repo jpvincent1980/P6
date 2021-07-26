@@ -169,16 +169,16 @@ a:link {
   box-sizing: border-box;
 }
 
-#best-movie > p {
+#best-movie > a p {
   position: relative;
   margin: auto;
 }
 
-#best-movie > p:hover {
+#best-movie > a p:hover {
   cursor: pointer;
 }
 
-#best-movie > p::before {
+#best-movie > a p::before {
   content: "▶";
   position: absolute;
   padding-left: 0.5rem;
@@ -204,7 +204,7 @@ a:link {
   vertical-align: middle;
 }
 
-#best-movie h4 {
+#best-movie h2 {
   width: 75%;
   margin: auto;
   padding-bottom: 1rem;
