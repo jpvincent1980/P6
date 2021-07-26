@@ -62,7 +62,11 @@ return response.json();
 .then(function(resolve) {
 let elements = bestMovie.getElementsByClassName("open-modal");
 for (let element of elements) {
+if (element.getAttribute("value") != null) {
+element.setAttribute("value",resolve.url);
+} else {
 element.setAttribute("longdesc",resolve.url);
+};
 };
 let image = bestMovie.getElementsByTagName("img")[0];
 image.setAttribute("src",resolve.image_url);
@@ -142,6 +146,9 @@ for (let modal of modals) {
 modal.addEventListener("click", function(event) {
     event.preventDefault();
     let url = this.getAttribute("longdesc");
+    if (url == null) {
+    url = this.getAttribute("value");
+    }
     fetch(url)
     .then(function(response) {
     return response.json();

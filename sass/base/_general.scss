@@ -126,12 +126,15 @@ font-size: 1.5rem;
     text-align: center;
     }
     & a {
-    background: linear-gradient(currentColor 0 0) var(--p, 0) 100% /var(--d, 0) 3px no-repeat;
+//     background: linear-gradient(currentColor 0 0) var(--p, 0) 100% /var(--d, 0) 3px no-repeat;
+    background: linear-gradient(currentColor 0 0) 0 100% /0 3px no-repeat;
     transition: 0.3s, background-position 0s 0.3s;
     }
     & a:hover {
-    --d: 100%;
-    --p: 100%;}
+    background: linear-gradient(currentColor 0 0) 100% 100% /100% 3px no-repeat;
+//     --d: 100%;
+//     --p: 100%;
+    }
 }
 
 .previous,.next {
