@@ -33,13 +33,6 @@ Lorsque votre environnement virtuel est activé, installez les modules Python n�
 ``pip install -r requirements.txt``
 
 
-Flake8:
-
-Flake8 faisant partie des modules du fichier ``requirements.txt``, 
-celui-ci sera installé dans votre environnement virtuel. Vous pourrez 
-générer un nouveau rapport flake8 en saisissant la commande ``flake8`` dans votre terminal depuis le répertoire où vous avez enregistré le 
-projet.
-
 ## Démarrage
 
 [...]
