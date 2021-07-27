@@ -1,6 +1,6 @@
 //Defines constants for elements of webpage
 const bestMovie = document.getElementById("best-movie");
-const carousels = document.getElementsByClassName("carousel");
+const carousels = document.getElementsByClassName("carousel-wrapper");
 
 //Defines constants used for modal window
 const modals = document.getElementsByClassName("open-modal");
@@ -22,12 +22,6 @@ const movieImage = document.getElementById("movie-image");
 const imageWidth = 182;
 const imagePadding = 2;
 const scrollStep = imageWidth + (2*imagePadding);
-let nextRight = 30;
-let previousLeft = 0;
-const initialNextRight = nextRight+"px";
-const initialPreviousLeft = previousLeft+"px";
-const minNextRight = nextRight - (3*scrollStep)+"px";
-const maxPreviousLeft = previousLeft + (3*scrollStep)+"px";
 
 //Get movie data for the movie with the best score
 async function getBestMovie(url,genre = "") {
@@ -66,8 +60,8 @@ if (element.getAttribute("value") != null) {
 element.setAttribute("value",resolve.url);
 } else {
 element.setAttribute("href",resolve.url);
-bestMovie.getElementsByTagName("h1")[0].innerText = resolve.title;
-bestMovie.getElementsByTagName("h2")[0].innerText = resolve.description;
+bestMovie.getElementsByTagName("h2")[0].innerText = resolve.title;
+bestMovie.getElementsByTagName("h3")[0].innerText = resolve.description;
 if (element.getElementsByTagName("img").length > 0) {
 element.getElementsByTagName("img")[0].setAttribute("src",resolve.image_url);
 };
@@ -80,14 +74,14 @@ element.getElementsByTagName("img")[0].setAttribute("src",resolve.image_url);
 
 //Gets data for the seven best movies for each category i.e. carousel
 for (let carousel of carousels) {
-let genre = carousel.id;
+let genre = carousel.getElementsByTagName("div")[0].getAttribute("id");
 if (genre == "bestScores") {
 genre = "";
 };
 getSevenMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=",genre)
 .then(function(resolve) {
 let movies = resolve;
-let images = carousel.getElementsByClassName("open-modal");
+let images = carousel.getElementsByTagName("div")[0].getElementsByClassName("open-modal");
 let i = 0;
 for (let image of images) {
 image.setAttribute("href",movies[i].url);
@@ -102,38 +96,31 @@ i += 1;
 const previous = carousel.getElementsByClassName("previous")[0];
 const next = carousel.getElementsByClassName("next")[0];
 next.addEventListener("click", function(e) {
-nextRight = Number(next.style.right.replace("px",""));
-nextRight -= scrollStep;
-previousLeft = Number(previous.style.left.replace("px",""));
-previousLeft += scrollStep;
-next.style.right = nextRight+"px";
-previous.style.left = previousLeft+"px";
-carousel.scrollBy(scrollStep,0);
-if (next.style.right == minNextRight) {
+let liValue = Number(carousel.getElementsByTagName("li")[0].getAttribute("value"));
+carousel.getElementsByTagName("li")[0].setAttribute("value", liValue += 1);
+carousel.getElementsByClassName("carousel")[0].scrollBy(scrollStep,0);
+if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) > 3) {
 next.style.display = "none";
 } else {
 next.style.display = "flex";
 }
-if (previous.style.left == initialPreviousLeft) {
+if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) == 1) {
 previous.style.display = "none";
 } else {
 previous.style.display = "flex";
 }
 })
+
 previous.addEventListener("click", function(e) {
-nextRight = Number(next.style.right.replace("px",""));
-nextRight += scrollStep;
-previousLeft = Number(previous.style.left.replace("px",""));
-previousLeft -= scrollStep;
-next.style.right = nextRight+"px";
-previous.style.left = previousLeft+"px";
-carousel.scrollBy(-scrollStep,0);
-if (next.style.right == minNextRight) {
+let liValue = Number(carousel.getElementsByTagName("li")[0].getAttribute("value"));
+carousel.getElementsByTagName("li")[0].setAttribute("value", liValue -= 1);
+carousel.getElementsByClassName("carousel")[0].scrollBy(-scrollStep,0);
+if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) > 3) {
 next.style.display = "none";
 } else {
 next.style.display = "flex";
 }
-if (previous.style.left == initialPreviousLeft) {
+if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) == 1) {
 previous.style.display = "none";
 } else {
 previous.style.display = "flex";

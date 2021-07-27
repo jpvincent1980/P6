@@ -17,9 +17,9 @@
     <div class="modal-content" id="modal-content">
         <button id="close-modal" autofocus>X</button>
         <header id="modal-header">
-            <h1 id="movie-title">TITRE DU FILM</h1>
         </header>
         <section class="modal-section">
+            <h2 id="movie-title">TITRE DU FILM</h2>
                 <ul>
                     <li id="movie-genre">GENRE:</li>
                     <li id="movie-release-date">DATE DE SORTIE:</li>
@@ -59,14 +59,15 @@
 <main>
 <section id="best-movie">
     <div>
-    <h1>*</h1>
     <h2>*</h2>
+    <h3>*</h3>
     <button class="open-modal" value="">▶ Play</button>
     </div>
     <a class="open-modal" href=""><p><img src="movie_poster_template.png" alt="" /></p></a>
 </section>
-    <h2>Films les mieux notés</h2>
-    <section class="carousel" id="bestScores">
+
+    <section class="carousel-wrapper">
+        <h2>Films les mieux notés</h2>
         <button class="previous" style="left: 0px">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                 <path d="m 13 2 l -7 8 l 7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
@@ -77,63 +78,21 @@
                 <path d="m 8 2 l 7 8 l -7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
             </svg>
         </button>
-        <ul>
+        <div class="carousel" id="bestScores">
+        <ol>
+            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-        </ul>
+        </ol>
+        </div>
     </section>
-    <h2>Science-Fiction</h2>
-    <section class="carousel" id="Sci-Fi">
-            <button class="previous" style="left: 0px">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <path d="m 13 2 l -7 8 l 7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
-                </svg>
-            </button>
-            <button class="next" style="right: 30px">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <path d="m 8 2 l 7 8 l -7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
-                </svg>
-            </button>
-        <ul>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-        </ul>
-    </section>
-    <h2>Animation</h2>
-    <section class="carousel" id="Animation">
-            <button class="previous" style="left: 0px">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <path d="m 13 2 l -7 8 l 7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
-                </svg>
-            </button>
-            <button class="next" style="right: 30px">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <path d="m 8 2 l 7 8 l -7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
-                </svg>
-            </button>
 
-        <ul>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-        </ul>
-    </section>
-    <h2>Horreur</h2>
-    <section class="carousel" id="Horror">
+    <section class="carousel-wrapper">
+        <h2>Science-Fiction</h2>
             <button class="previous" style="left: 0px">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                     <path d="m 13 2 l -7 8 l 7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
@@ -144,15 +103,67 @@
                     <path d="m 8 2 l 7 8 l -7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
                 </svg>
             </button>
-        <ul>
+        <div class="carousel" id="Sci-Fi">
+        <ol>
+            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        </ol>
+        </div>
+    </section>
+
+    <section class="carousel-wrapper">
+        <h2>Animation</h2>
+            <button class="previous" style="left: 0px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="m 13 2 l -7 8 l 7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
+                </svg>
+            </button>
+            <button class="next" style="right: 30px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="m 8 2 l 7 8 l -7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
+                </svg>
+            </button>
+        <div class="carousel" id="Animation">
+        <ol>
+            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
             <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-        </ul>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        </ol>
+        </div>
+    </section>
+
+    <section class="carousel-wrapper">
+        <h2>Horreur</h2>
+            <button class="previous" style="left: 0px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="m 13 2 l -7 8 l 7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
+                </svg>
+            </button>
+            <button class="next" style="right: 30px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="m 8 2 l 7 8 l -7 8" stroke-linejoin="round" fill="none" stroke="#000" stroke-width="3" />
+                </svg>
+            </button>
+        <div class="carousel" id="Horror">
+        <ol>
+            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        </ol>
+        </div>
     </section>
 <button onclick="backToTopFunction()" id="backToTop" title="Go back to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
