@@ -56,17 +56,13 @@ return response.json();
 .then(function(resolve) {
 let elements = bestMovie.getElementsByClassName("open-modal");
 for (let element of elements) {
-if (element.getAttribute("value") != null) {
-element.setAttribute("value",resolve.url);
-} else {
-element.setAttribute("href",resolve.url);
+element.setAttribute("data-source",resolve.url);
 bestMovie.getElementsByTagName("h2")[0].innerText = resolve.title;
 bestMovie.getElementsByTagName("h3")[0].innerText = resolve.description;
 if (element.getElementsByTagName("img").length > 0) {
 element.getElementsByTagName("img")[0].setAttribute("src",resolve.image_url);
 };
 }
-};
 })
 .catch((err) => console.log("Erreur : " + err));
 })
@@ -84,7 +80,7 @@ let movies = resolve;
 let images = carousel.getElementsByTagName("div")[0].getElementsByClassName("open-modal");
 let i = 0;
 for (let image of images) {
-image.setAttribute("href",movies[i].url);
+image.setAttribute("data-source",movies[i].url);
 image.getElementsByTagName("img")[0].setAttribute("src",movies[i].image_url);
 image.getElementsByTagName("img")[0].setAttribute("alt",movies[i].title);
 i += 1;
@@ -97,15 +93,15 @@ const previous = carousel.getElementsByClassName("previous")[0];
 const next = carousel.getElementsByClassName("next")[0];
 
 next.addEventListener("click", function(e) {
-let liValue = Number(carousel.getElementsByTagName("li")[0].getAttribute("value"));
-carousel.getElementsByTagName("li")[0].setAttribute("value", liValue += 1);
+let liValue = Number(carousel.getElementsByTagName("ol")[0].getAttribute("data-counter"));
+carousel.getElementsByTagName("ol")[0].setAttribute("data-counter", liValue += 1);
 carousel.getElementsByClassName("carousel")[0].scrollTo((liValue-1)*scrollStep,0);
-if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) > 3) {
+if (Number(carousel.getElementsByTagName("ol")[0].getAttribute("data-counter")) > 3) {
 next.style.display = "none";
 } else {
 next.style.display = "flex";
 }
-if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) == 1) {
+if (Number(carousel.getElementsByTagName("ol")[0].getAttribute("data-counter")) == 1) {
 previous.style.display = "none";
 } else {
 previous.style.display = "flex";
@@ -113,15 +109,15 @@ previous.style.display = "flex";
 })
 
 previous.addEventListener("click", function(e) {
-let liValue = Number(carousel.getElementsByTagName("li")[0].getAttribute("value"));
-carousel.getElementsByTagName("li")[0].setAttribute("value", liValue -= 1);
+let liValue = Number(carousel.getElementsByTagName("ol")[0].getAttribute("data-counter"));
+carousel.getElementsByTagName("ol")[0].setAttribute("data-counter", liValue -= 1);
 carousel.getElementsByClassName("carousel")[0].scrollTo((liValue-1)*scrollStep,0);
-if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) > 3) {
+if (Number(carousel.getElementsByTagName("ol")[0].getAttribute("data-counter")) > 3) {
 next.style.display = "none";
 } else {
 next.style.display = "flex";
 }
-if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) == 1) {
+if (Number(carousel.getElementsByTagName("ol")[0].getAttribute("data-counter")) == 1) {
 previous.style.display = "none";
 } else {
 previous.style.display = "flex";
@@ -133,10 +129,7 @@ previous.style.display = "flex";
 for (let modal of modals) {
 modal.addEventListener("click", function(event) {
     event.preventDefault();
-    let url = this.getAttribute("href");
-    if (url == null) {
-    url = this.getAttribute("value");
-    }
+    let url = this.getAttribute("data-source");
     fetch(url)
     .then(function(response) {
     return response.json();

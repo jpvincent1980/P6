@@ -15,7 +15,7 @@
 <div class="modal" id="modal" aria-hidden="true" role="dialog"
      aria-describedby="movie-synopsis">
     <div class="modal-content" id="modal-content">
-        <button id="close-modal" autofocus>X</button>
+        <button id="close-modal" title="Close modal window" autofocus>X</button>
         <header id="modal-header">
         </header>
         <section class="modal-section">
@@ -61,9 +61,9 @@
     <div>
     <h2>*</h2>
     <h3>*</h3>
-    <button class="open-modal" value="">▶ Play</button>
+    <button class="open-modal" data-source="" title="Get movie details">▶ Play</button>
     </div>
-    <a class="open-modal" href=""><p><img src="movie_poster_template.png" alt="" /></p></a>
+    <a class="open-modal" data-source=""><p><img src="movie_poster_template.png" alt="" /></p></a>
 </section>
 
     <section class="carousel-wrapper">
@@ -79,14 +79,14 @@
             </svg>
         </button>
         <div class="carousel" id="bestScores">
-        <ol>
-            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        <ol data-counter="1">
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
         </ol>
         </div>
     </section>
@@ -104,14 +104,14 @@
                 </svg>
             </button>
         <div class="carousel" id="Sci-Fi">
-        <ol>
-            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        <ol data-counter="1">
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
         </ol>
         </div>
     </section>
@@ -129,14 +129,14 @@
                 </svg>
             </button>
         <div class="carousel" id="Animation">
-        <ol>
-            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        <ol data-counter="1">
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
         </ol>
         </div>
     </section>
@@ -154,14 +154,14 @@
                 </svg>
             </button>
         <div class="carousel" id="Horror">
-        <ol>
-            <li value="1"><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
-            <li><a class="open-modal" href=""><img src="movie_poster_template.png" alt="" /></a></li>
+        <ol data-counter="1">
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
+            <li><a class="open-modal" data-source=""><img src="movie_poster_template.png" alt="" /></a></li>
         </ol>
         </div>
     </section>
