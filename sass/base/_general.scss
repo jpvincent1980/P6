@@ -6,7 +6,7 @@ color: #000;
 text-align: center;
 }
 
-section, header {
+section {
 border: 0px solid black;
 position: relative;
 width: $carousel-width;
@@ -110,6 +110,10 @@ cursor: default;
     top: $closing-button-size*2;
     filter: drop-shadow(0 0 1rem black);
     }
+}
+
+.modal-section {
+width: 100%;
 }
 
 .header {
