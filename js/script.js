@@ -95,10 +95,11 @@ i += 1;
 //Handles the scrolling of the carousel with the dynamic arrows
 const previous = carousel.getElementsByClassName("previous")[0];
 const next = carousel.getElementsByClassName("next")[0];
+
 next.addEventListener("click", function(e) {
 let liValue = Number(carousel.getElementsByTagName("li")[0].getAttribute("value"));
 carousel.getElementsByTagName("li")[0].setAttribute("value", liValue += 1);
-carousel.getElementsByClassName("carousel")[0].scrollBy(scrollStep,0);
+carousel.getElementsByClassName("carousel")[0].scrollTo((liValue-1)*scrollStep,0);
 if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) > 3) {
 next.style.display = "none";
 } else {
@@ -114,7 +115,7 @@ previous.style.display = "flex";
 previous.addEventListener("click", function(e) {
 let liValue = Number(carousel.getElementsByTagName("li")[0].getAttribute("value"));
 carousel.getElementsByTagName("li")[0].setAttribute("value", liValue -= 1);
-carousel.getElementsByClassName("carousel")[0].scrollBy(-scrollStep,0);
+carousel.getElementsByClassName("carousel")[0].scrollTo((liValue-1)*scrollStep,0);
 if (Number(carousel.getElementsByTagName("li")[0].getAttribute("value")) > 3) {
 next.style.display = "none";
 } else {
