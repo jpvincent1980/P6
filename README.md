@@ -8,7 +8,7 @@
 
 Créer une page web intéractive pour l'association JustStreamIt en s'inspirant de la page d'accueil de Netflix.
 
-La page utilisera l'API Fetch et devra inclure une fenêtre modale et plusieurrs caroussels.
+La page utilisera l'API Fetch et devra inclure une fenêtre modale et plusieurs caroussels.
 
 Les langages utilisés sont HTML, CSS (SaSS) et JavaScript.
 
