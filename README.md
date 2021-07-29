@@ -1,42 +1,32 @@
-![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)
+
 ![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
 
 # Projet P6
 
-[...]
+Créer une page web intéractive pour l'association JustStreamIt en s'inspirant de la page d'accueil de Netflix.
+
+La page utilisera l'API Fetch et devra inclure une fenêtre modale et plusieurrs caroussels.
+
+Les langages utilisés sont HTML, CSS (SaSS) et JavaScript.
 
 ## Pré-requis
 
-Une version de Python >= 3.0 doit être installée sur votre poste.
+L'API OCMovies-API doit être installée en local sur votre ordinateur.
 
-## Installation
+Pour se faire, vous pouvez suivre les indications du dépôt GitHub au lien suivant:
 
-Depuis un terminal de type GitBash, déplacez-vous dans le répertoire dans lequel vous souhaitez récupérer le script ainsi que les fichiers *readme.md* et *requirements.txt*  et saisissez la commande ci-dessous:
+``https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR``
+
+Ensuite, depuis un terminal de type GitBash, déplacez-vous dans le répertoire dans lequel vous souhaitez récupérer les fichiers et saisissez la commande ci-dessous:
 
 ``git clone https://github.com/jpvincent1980/P6``
 
-Une fois les fichiers téléchargés sur votre poste de travail, vous devez au préalable créer et activer un environnement virtuel sur votre poste.
-Pour se faire, suivez les étapes suivantes :
-1. Depuis votre terminal et toujours dans le même répertoire que précédemment, créer un environnement virtuel en saisissant la commande suivante:
-  `` python -m venv env`` (``env`` sera le nom de votre environnement virtuel)
-  
-
-2. Activez votre environnement virtuel en saisissant la commande suivante:
-   
-   *sous Windows* -> ``env/Scripts/activate.bat``
-   
-   *sous Mac/Linux* -> ``source/env/bin/activate``
-   
-
-Lorsque votre environnement virtuel est activé, installez les modules Python nécessaires à la bonne exécution du script grâce au fichier *requirements.txt* précédemment téléchargé en saisissant la commande ci-dessous toujours depuis le terminal:
-
-``pip install -r requirements.txt``
-
-
 ## Démarrage
 
-[...]
-
+Ouvrez le fichier ``index.html`` depuis le navigateur de votre choix.
 
 ## IDE utilisé
 

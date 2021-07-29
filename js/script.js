@@ -1,3 +1,12 @@
+fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7")
+.then(function(resolve) {
+return resolve.json();
+})
+.then(function(data) {
+console.log(data);
+})
+.catch((error) => console.log("Erreur : " + error))
+
 //Defines constants for elements of webpage
 const bestMovie = document.getElementById("best-movie");
 const carousels = document.getElementsByClassName("carousel-wrapper");
