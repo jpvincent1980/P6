@@ -21,6 +21,7 @@ const movieSynopsis = document.getElementById("movie-synopsis");
 const movieImage = document.getElementById("movie-image");
 
 //Defines constants and variables used for carousels
+const nbOfMoviesByCarousel = 7;
 const imageWidth = 182;
 const imagePadding = 2;
 const scrollStep = imageWidth + (2*imagePadding);
@@ -34,7 +35,8 @@ async function getBestMovies(url,genre = "",page_size="1") {
 return bestMovies
 }
 
-//Gets data for the best movie
+//Gets data for a list of movies (returns an array)
+//Number of movies in the list is provided with the page_size parameter
 getBestMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score",genre="",page_size="1")
 .then(function(resolve) {
     fetch(resolve[0].url)
@@ -62,7 +64,7 @@ for (let carousel of carousels) {
     if (genre == "bestScores") {
         genre = "";
     };
-    getBestMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score",genre=genre,page_size="7")
+    getBestMovies("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score",genre=genre,page_size=nbOfMoviesByCarousel)
     .then(function(resolve) {
         let movies = resolve;
         let images = carousel.getElementsByTagName("div")[0].getElementsByClassName("open-modal");
@@ -180,9 +182,9 @@ const backToTopButton = document.getElementById("backToTop");
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    backToTopButton.style.display = "block";
+    backToTopButton.style.opacity = "1";
   } else {
-    backToTopButton.style.display = "none";
+    backToTopButton.style.opacity = "0";
   }
 }
 function backToTopFunction() {

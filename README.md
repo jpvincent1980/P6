@@ -4,6 +4,8 @@
 
 ![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
 
+![alt text](https://github.com/jpvincent1980/P6/blob/main/Screenshot.JPG)
+
 # Projet P6
 
 Créer une page web intéractive pour l'association JustStreamIt en s'inspirant de la page d'accueil de Netflix.
