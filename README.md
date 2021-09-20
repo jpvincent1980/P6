@@ -4,7 +4,7 @@
 
 ![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
 
-![alt text](https://github.com/jpvincent1980/P6/blob/main/Screenshot.JPG)
+![alt text](https://github.com/jpvincent1980/P6/blob/main/Screenshot.png)
 
 # Projet P6
 
