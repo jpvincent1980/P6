@@ -299,8 +299,8 @@ a:link {
 }
 
 #backToTop {
-  display: none;
   position: fixed;
+  opacity: 0;
   bottom: 20px;
   right: 20px;
   width: 4rem;
@@ -312,6 +312,7 @@ a:link {
   font-size: 0.8rem;
   cursor: pointer;
   z-index: 1;
+  transition: opacity 500ms ease-in-out;
 }
 
 #backToTop svg {
