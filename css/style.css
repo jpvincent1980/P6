@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
 * {
   font-family: "Noto Sans JP", sans-serif;
   background-color: #fff;
@@ -175,11 +183,18 @@ a:link {
 #best-movie > div {
   position: relative;
   box-sizing: border-box;
+  min-width: 75%;
 }
 
 #best-movie > a p {
   position: relative;
   margin: auto;
+  min-width: 182px;
+  min-height: 268px;
+  background-image: linear-gradient(to right, lightgrey 0%, rgba(255, 255, 255, 0.5) 20%, lightgrey 40%, lightgrey 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat;
+  animation: shimmer 2000ms linear infinite;
 }
 
 #best-movie > a p:hover {
@@ -230,6 +245,8 @@ a:link {
   border: 0;
   border-radius: 10%;
   cursor: pointer;
+  position: absolute;
+  bottom: 2px;
 }
 
 .test {
@@ -253,7 +270,15 @@ a:link {
 }
 .carousel li {
   display: inline-block;
-  padding: 2px;
+  margin: 2px;
+  position: relative;
+  background-image: linear-gradient(to right, lightgrey 0%, rgba(255, 255, 255, 0.5) 20%, lightgrey 40%, lightgrey 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat;
+  animation: shimmer 2000ms linear infinite;
+  margin: 0 2px;
+  min-width: 182px;
+  min-height: 268px;
   box-sizing: border-box;
   transform-origin: center left;
   transition: all 500ms;
@@ -274,6 +299,7 @@ a:link {
 }
 
 #backToTop {
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -286,7 +312,6 @@ a:link {
   font-size: 0.8rem;
   cursor: pointer;
   z-index: 1;
-  transition: opacity 500ms ease-in-out;
 }
 
 #backToTop svg {

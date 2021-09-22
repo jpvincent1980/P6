@@ -1,3 +1,12 @@
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
 *
 {
 font-family: 'Noto Sans JP', sans-serif;
@@ -175,11 +184,18 @@ filter: drop-shadow(0 0 1rem black);
 #best-movie > div {
 position: relative;
 box-sizing: border-box;
+min-width: 75%;
 }
 
 #best-movie > a p {
 position: relative;
 margin: auto;
+min-width: 182px;
+min-height: 268px;
+background-image: linear-gradient(to right, lightgrey 0%, rgba(255,255,255,0.5) 20%, lightgrey 40%, lightgrey 100%);
+background-size: 200% 100%;
+background-repeat: repeat;
+animation: shimmer 2000ms linear infinite;
 }
 
 #best-movie > a p:hover {
@@ -230,6 +246,8 @@ font-size: 1rem;
 border: 0;
 border-radius: 10%;
 cursor: pointer;
+position: absolute;
+bottom: 2px;
 }
 
 .test {
@@ -252,7 +270,15 @@ position: relative;
     }
     & li {
     display: inline-block;
-    padding: $image-padding;
+    margin: $image-padding;
+    position: relative;
+    background-image: linear-gradient(to right, lightgrey 0%, rgba(255,255,255,0.5) 20%, lightgrey 40%, lightgrey 100%);
+    background-size: 200% 100%;
+    background-repeat: repeat;
+    animation: shimmer 2000ms linear infinite;
+    margin: 0 2px;
+    min-width : 182px;
+    min-height: 268px;
     box-sizing: border-box;
     transform-origin: center left;
     transition: all 500ms;
